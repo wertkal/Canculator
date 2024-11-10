@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.plus{
+    background-color: green;
+    color: white;
+    border: none;
+    width: 55px;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 23px;
+    ffss
+}
+
+.rest{
+    background-color: black;
+    color: white;
+    border: none;
+    width: 60px;
+    height: 30px;
+    font-size: 23px;
+}
+
+.minus{
+    background-color: red;
+    color: white;
+    border: none;
+    width: 55px;
+    height: 30px;
+    font-size: 23px;
+}
+
+.counter{
+    margin: 20px;
+    font-size: 45px;
+}
+
+.h1{
+    font-size: 45px;
+}
