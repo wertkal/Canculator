@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="./table.css">
 </head>
 <body>
-    <h1 class="Add">Add +</h1>
+    <div class="block">
+        <div class="block1">
+        <input class="inpSearch" placeholder="Search" type="search">
+        <button class="btn-search">Search</button>
+        <button class="btn-sort">Sort</button>
+        </div>
+        <h1 class="Add">Add +</h1>
+    </div>
+    
     <dialog class="diaAdd">
           <label for="img">Image: </label> <br>
           <input id="img" class="input inpAddFile" placeholder="Image" type="text">
@@ -43,6 +51,16 @@
         <input class="checkbox3" id="status" type="checkbox">
         <button class="btn-Save">Save</button>
         <button class="btn-Close">Close</button>
+  </dialog>
+  <dialog class="diaInfo">
+         <img class="imgInfo" src="" alt="">
+         <h3 class="InfoName"></h3>
+         <h4 class="InfoEmail"></h4>
+         <h4 class="InfoContact"></h4>
+         <h4 class="InfoAge"></h4>
+         <h4 class="InfoCountry"></h4>
+         <h4 class="InfoComplete"></h4>
+         <button class="btnClose">Close</button>
   </dialog>
     <table>
         <thead>

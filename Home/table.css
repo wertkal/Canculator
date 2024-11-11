@@ -55,8 +55,6 @@ img{
     width: 100px;
     height: 40px;
     text-align: center;
-    margin-left: 1050px;
-    margin-top: 55px;
     cursor: pointer;
     border-radius: 10px;
 }
@@ -133,4 +131,46 @@ label{
 .checkbox{
     position: relative;
     left: 12px;
+}
+.block{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+.inpSearch{
+    padding: 5px 8px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+.btn-search{
+    background-color: crimson;
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+}
+.diaInfo{
+    margin-left: 600px;
+    width: 280px;
+    height: 200px;
+    text-align: center;
+    padding: 5px;
+}
+.btnClose{
+    background-color: rgb(66, 141, 253);
+    color: white;
+    padding: 4px 6px;
+    margin: 1px;
+    border: none;
+}
+.btn-sort{
+    background-color: green;
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
 }

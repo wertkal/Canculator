@@ -20,6 +20,19 @@ let inpEditCountry = document.querySelector('.inpEditCountry')
 let checkbox3 = document.querySelector('.checkbox3')
 let btnSave2 = document.querySelector('.btn-Save')
 let btnClose2 = document.querySelector('.btn-Close')
+let inpSearch = document.querySelector('.inpSearch')
+let btnSearch = document.querySelector('.btn-search')
+let diaInfo = document.querySelector('.diaInfo')
+let imgInfo = document.querySelector('.imgInfo')
+let InfoName = document.querySelector('.InfoName')
+let InfoEmail = document.querySelector('.InfoEmail')
+let InfoContact = document.querySelector('.InfoContact')
+let InfoAge = document.querySelector('.InfoAge')
+let InfoCountry = document.querySelector('.InfoCountry')
+let InfoComplete = document.querySelector('.InfoComplete')
+let btnClose3 = document.querySelector('.btnClose')
+let btnSort = document.querySelector('.btn-sort')
+
 
 let users = [
     {
@@ -124,8 +137,8 @@ function get(user){
         }
 
         let optionsUser = document.createElement('td')
-        let btnEye = document.createElement('span')
-        btnEye.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        let btnInfo = document.createElement('span')
+        btnInfo.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
         <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
         </svg>
@@ -193,7 +206,6 @@ function get(user){
             get(users)
         }
 
-        // let idx = null;
 
         btnEdit.onclick = () => {
             diaEdit.showModal()     
@@ -216,10 +228,46 @@ function get(user){
         }
 
 
-         optionsUser.append(btnEye, btnEdit, btnDel, checkbox2)
+         btnSearch.onclick = () => {
+            let clone = users.filter((user) => {
+                if(inpSearch.value != '' || inpSearch.value.length > '5'){
+                    return user.title.toLowerCase() == inpSearch.value.toLowerCase();
+                }else{
+                    inpSearch.value = 'Assalomu alaykum'
+                    get(clone)
+                }
+            });
+            get(clone)
+        }
+
+
+        btnInfo.onclick = () => {
+            diaInfo.showModal()
+            funcInfo(el)
+        }
+
+
+        btnClose3.onclick = () => {
+            diaInfo.close()
+        }
+
+
+        btnSort.onclick = () => {
+            funcSortUsers()
+        }
+        
+        
+        function funcSortUsers(){
+          users.sort((a, b) => {
+             return a.title.localeCompare(b.title)
+    })
+    get(users)
+}
+
+         optionsUser.append(btnInfo, btnEdit, btnDel, checkbox2)
          tr.append(idUser, imgUser, contactUser, ageUser, countryUser, statusUser, optionsUser)
          tbody.append(tr)
-    })
+    });
 }
 
 
@@ -229,7 +277,7 @@ function funcDelUser(id){
                 return el.id != id;
             });
             get(users)
-        }
+}
 
 
 function ModulEdit(el){
@@ -244,5 +292,19 @@ function ModulEdit(el){
     diaEdit.close()
     
 }
+
+
+function funcInfo(el){
+    imgInfo.src = el.img
+    InfoName.innerHTML = el.title
+    InfoEmail.innerHTML = el.email
+    InfoContact.innerHTML = el.contact
+    InfoAge.innerHTML = el.age
+    InfoCountry.innerHTML = el.country
+    InfoComplete.innerHTML = el.status
+}
+
+
+
 
 get(users)
